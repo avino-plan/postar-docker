@@ -7,6 +7,8 @@
 
 ### 📖 使用手册
 
+**Docker Hub：**[https://hub.docker.com/r/fishgoddess/postar](https://hub.docker.com/r/fishgoddess/postar)
+
 ```shell
 $ VERSION=v0.2.0-alpha
 $ docker build -t fishgoddess/postar:$VERSION .
