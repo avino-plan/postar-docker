@@ -17,6 +17,7 @@ ENV POSTAR_DOWNLOAD_URL https://github.com/avino-plan/postar/releases/download/$
 # Download postar
 WORKDIR /opt/
 RUN set -e; \
+    mkdir postar-$POSTAR_VERSION; \
     wget $POSTAR_DOWNLOAD_URL -P postar-$POSTAR_VERSION
 
 # Deploy and add executable permission
