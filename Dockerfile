@@ -24,11 +24,12 @@ RUN set -e; \
 WORKDIR /opt/postar-$POSTAR_VERSION
 RUN set -e; \
     tar -xf postar-$POSTAR_VERSION.tar.gz; \
-    rm postar-$POSTAR_VERSION.tar.gz; \
-    chmod +x bin/postar-$POSTAR_VERSION-linux
+    rm postar-$POSTAR_VERSION.tar.gz bin/postar-$POSTAR_VERSION-darwin bin/postar-$POSTAR_VERSION-windows.exe; \
+    mv bin/postar-$POSTAR_VERSION-linux bin/postar; \
+    chmod +x bin/postar
 
 # Expose ports for services
 EXPOSE 5897
 
 # Run postar
-CMD ["bin/postar-$POSTAR_VERSION-linux"]
+CMD ["bin/postar"]
