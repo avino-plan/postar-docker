@@ -2,9 +2,15 @@
 # Use of this source code is governed by a MIT style
 # license that can be found in the LICENSE file.
 #
-# Postar docker build script
+# Postar docker publish script
 # Author: fishgoddess
 VERSION=v0.2.0-alpha
 
-# Build a docker image
-docker build -t fishgoddess/postar:$VERSION . || exit
+# Login to docker
+docker login
+
+# Push to docker hub
+docker push fishgoddess/postar:$VERSION
+
+# Logout from docker
+docker logout
