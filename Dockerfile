@@ -7,7 +7,7 @@
 
 # Use alpine as a based image
 # Notice that its shell is sh not bash
-FROM alpine:3.12.0
+FROM alpine:3.14.0
 LABEL maintainer="fishgoddess"
 
 # The version of postar
@@ -32,4 +32,4 @@ RUN set -e; \
 EXPOSE 5897
 
 # Run postar
-CMD ["bin/postar", "-conf", "/opt/postar/conf"]
+CMD ["bin/postar", "-conf", "/opt/postar/conf/postar.ini"]
