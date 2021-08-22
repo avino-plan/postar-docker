@@ -32,8 +32,8 @@ this:_
 
 ```ini
 [logger]
-output_file = "/tmp/postar.log"
-error_output_file = "/tmp/postar.error.log"
+output_file = "/opt/postar/log/postar.log"
+error_output_file = "/opt/postar/log/postar.error.log"
 
 [sender]
 smtp_host = "smtp.xxx.com"
@@ -47,7 +47,7 @@ _You should replace the information of yours._
 _Then, it's ok! Try to run by this command, and you will see some logs printed on screen:_
 
 ```bash
-$ docker run --name postar -p 5897:5897 -v /etc/postar/postar.ini:/opt/postar-v0.2.0-alpha/conf/postar.ini -d fishgoddess/postar:v0.2.0-alpha
+$ docker run --name postar -p 5897:5897 -v /root/docker/postar/conf/postar.ini:/opt/postar/conf/postar.ini fishgoddess/postar:v0.2.0-alpha
 ```
 
 _Remember "/etc/postar/postar.ini" is where your config file is._
