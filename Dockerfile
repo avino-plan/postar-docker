@@ -17,11 +17,11 @@ ENV POSTAR_DOWNLOAD_URL https://github.com/avino-plan/postar/releases/download/$
 # Download postar
 WORKDIR /opt/
 RUN set -e; \
-    mkdir postar-$POSTAR_VERSION; \
-    wget $POSTAR_DOWNLOAD_URL -P postar-$POSTAR_VERSION
+    mkdir postar; \
+    wget $POSTAR_DOWNLOAD_URL -P postar
 
 # Deploy and add executable permission
-WORKDIR /opt/postar-$POSTAR_VERSION
+WORKDIR /opt/postar
 RUN set -e; \
     tar -xf postar-$POSTAR_VERSION.tar.gz; \
     rm postar-$POSTAR_VERSION.tar.gz bin/postar-$POSTAR_VERSION-darwin bin/postar-$POSTAR_VERSION-windows.exe; \
@@ -32,4 +32,4 @@ RUN set -e; \
 EXPOSE 5897
 
 # Run postar
-CMD ["bin/postar"]
+CMD ["bin/postar", "-conf", "/opt/postar/conf"]

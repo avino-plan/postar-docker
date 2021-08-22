@@ -31,6 +31,10 @@ _Before running this image, you should prepare a config file named "postar.ini",
 this:_
 
 ```ini
+[logger]
+output_file = "/tmp/postar.log"
+error_output_file = "/tmp/postar.error.log"
+
 [sender]
 smtp_host = "smtp.xxx.com"
 smtp_port = 587
