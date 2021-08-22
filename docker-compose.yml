@@ -13,4 +13,4 @@ services:
       - "5897:5897"
     volumes:
       - ./log:/opt/postar-v0.2.0-alpha/log
-      - ./postar.ini:/opt/postar-v0.2.0-alpha/postar.ini
+      - ./conf/postar.ini:/opt/postar-v0.2.0-alpha/postar.ini
