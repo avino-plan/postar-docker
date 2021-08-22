@@ -32,4 +32,4 @@ RUN set -e; \
 EXPOSE 5897
 
 # Run postar
-CMD ["bin/postar", "-conf", "/opt/postar/conf"]
+CMD ["bin/postar", "-conf", "/opt/postar/conf/postar.ini"]
