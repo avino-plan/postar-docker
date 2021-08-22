@@ -7,7 +7,7 @@
 VERSION=v0.2.0-alpha
 
 # Build a docker image
-docker build -t fishgoddess/postar:$VERSION .
+docker build -t fishgoddess/postar:$VERSION . || exit
 
 # Login to docker
 docker login
