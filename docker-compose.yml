@@ -8,10 +8,10 @@ version: "3.1"
 
 services:
   postar:
-    image: fishgoddess/postar:v0.2.0-alpha
+    image: fishgoddess/postar:v0.2.1-alpha
     restart: always
     ports:
       - "5897:5897"
     volumes:
-      - ./log:/opt/postar-v0.2.0-alpha/log
-      - ./conf/postar.ini:/opt/postar-v0.2.0-alpha/postar.ini
+      - ./log:/opt/postar/log
+      - ./conf/postar.ini:/opt/postar/conf/postar.ini

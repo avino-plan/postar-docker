@@ -11,7 +11,7 @@ FROM alpine:3.14.0
 LABEL maintainer="fishgoddess"
 
 # The version of postar
-ENV POSTAR_VERSION v0.2.0-alpha
+ENV POSTAR_VERSION v0.2.1-alpha
 ENV POSTAR_DOWNLOAD_URL https://github.com/avino-plan/postar/releases/download/$POSTAR_VERSION/postar-$POSTAR_VERSION.tar.gz
 
 # Download postar

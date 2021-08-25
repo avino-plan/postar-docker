@@ -50,9 +50,9 @@ _Then, it's ok! Try to run by this command, and you will see some logs printed o
 $ docker run --name postar -p 5897:5897 -v /root/docker/postar/conf/postar.ini:/opt/postar/conf/postar.ini fishgoddess/postar:v0.2.0-alpha
 ```
 
-_Remember "/etc/postar/postar.ini" is where your config file is._
+_Remember "/root/docker/postar/conf/postar.ini" is where your config file is._
 
-_The work directory is "/opt/postar-v0.2.0-alpha"._
+_The work directory is "/opt/postar"._
 
 _If you want to enter the container, try this:_
 
@@ -75,12 +75,13 @@ version: "3.1"
 
 services:
   postar:
-    image: fishgoddess/postar:v0.2.0-alpha
+    image: fishgoddess/postar:v0.2.1-alpha
+    restart: always
     ports:
       - "5897:5897"
     volumes:
-      - ./log:/opt/postar-v0.2.0-alpha/log
-      - ./conf/postar.ini:/opt/postar-v0.2.0-alpha/postar.ini
+      - ./log:/opt/postar/log
+      - ./conf/postar.ini:/opt/postar/conf/postar.ini
 ```
 
 _Notice that we map directory "logs" in the container to local directory "logs"._
