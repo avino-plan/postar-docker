@@ -4,7 +4,7 @@
 #
 # Postar docker publish script
 # Author: fishgoddess
-VERSION=v0.2.1-alpha
+VERSION=v0.2.2-alpha
 
 # Login to docker
 docker login
