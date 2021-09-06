@@ -4,7 +4,7 @@
 #
 # Postar docker build script
 # Author: fishgoddess
-VERSION=v0.2.2-alpha
+VERSION=v0.2.3-alpha
 
 # Build a docker image
 docker build -t fishgoddess/postar:$VERSION . || exit
