@@ -85,7 +85,7 @@ services:
       - ./postar.ini:/postar/postar.ini
 ```
 
-_Notice that we map directory "logs" in container to local directory "logs"._
+_Notice that we map directory "log" in container to local directory "log"._
 
 _So, you can read these logs conveniently._
 
