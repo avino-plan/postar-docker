@@ -3,33 +3,33 @@
 # license that can be found in the LICENSE file.
 #
 # Postar dockerfile
-# Author: fishgoddess
+# Author: FishGoddess
 
 # Use alpine as a based image
 # Notice that its shell is sh not bash
 FROM alpine:3.14.0
 LABEL maintainer="fishgoddess"
 
-# The version of postar
-ENV POSTAR_VERSION v0.2.3-alpha
-ENV POSTAR_DOWNLOAD_URL https://github.com/avino-plan/postar/releases/download/$POSTAR_VERSION/postar-$POSTAR_VERSION.tar.gz
+# Prepare env
+ENV POSTAR_VERSION v0.3.0-alpha
+ENV POSTAR_PACKAGE postar-$POSTAR_VERSION-linux-amd64.tar.gz
+ENV POSTAR_DOWNLOAD_URL https://github.com/avino-plan/postar/releases/download/$POSTAR_VERSION/$POSTAR_PACKAGE
 
 # Download postar
-WORKDIR /opt/
+WORKDIR /
 RUN set -e; \
     mkdir postar; \
     wget $POSTAR_DOWNLOAD_URL -P postar
 
-# Deploy and add executable permission
-WORKDIR /opt/postar
+# Deploy postar
+WORKDIR /postar
 RUN set -e; \
-    tar -xf postar-$POSTAR_VERSION.tar.gz; \
-    rm postar-$POSTAR_VERSION.tar.gz bin/postar-$POSTAR_VERSION-darwin bin/postar-$POSTAR_VERSION-windows.exe; \
-    mv bin/postar-$POSTAR_VERSION-linux bin/postar; \
-    chmod +x bin/postar
+    tar -xzf $POSTAR_PACKAGE; \
+    rm $POSTAR_PACKAGE; \
+    chmod +x ./postar
 
-# Expose ports for services
+# Expose ports
 EXPOSE 5897
 
 # Run postar
-CMD ["bin/postar", "-conf", "/opt/postar/conf/postar.ini"]
+CMD ["./postar"]
