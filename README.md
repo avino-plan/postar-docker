@@ -69,7 +69,7 @@ _So, you should use sh instead of bash._
 
 _First, a config file is needed too, just like mentioned above._
 
-_Second, you should prepare a file named "docker-compose.yaml", and a typical docker-compose file will be like this:_
+_Second, you should prepare a file named "docker-compose.yml", and a typical docker-compose file will be like this:_
 
 ```yaml
 version: "3.1"
