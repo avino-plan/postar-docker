@@ -3,15 +3,15 @@
 # license that can be found in the LICENSE file.
 #
 # Postar docker-compose
-# Author: fishgoddess
+# Author: FishGoddess
 version: "3.1"
 
 services:
   postar:
-    image: fishgoddess/postar:v0.2.3-alpha
+    image: fishgoddess/postar:v0.3.0-alpha
     restart: always
     ports:
       - "5897:5897"
     volumes:
-      - ./log:/opt/postar/log
-      - ./conf/postar.ini:/opt/postar/conf/postar.ini
+      - ./log:/postar/log
+      - ./postar.ini:/postar/postar.ini

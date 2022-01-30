@@ -17,10 +17,10 @@ Github: https://github.com/avino-plan/postar-docker
 
 ### 📚 How to use
 
-#### 1. Pull an image, such as version v0.2.3-alpha.
+#### 1. Pull an image, such as version v0.3.0-alpha.
 
 ```bash
-$ docker pull fishgoddess/postar:v0.2.3-alpha
+$ docker pull fishgoddess/postar:v0.3.0-alpha
 ```
 
 #### 2. Run this image by two ways.
@@ -31,15 +31,16 @@ _Before running this image, you should prepare a config file named "postar.ini",
 this:_
 
 ```ini
-[logger]
-output_file = "/opt/postar/log/postar.log"
-error_output_file = "/opt/postar/log/postar.error.log"
-
-[sender]
-smtp_host = "smtp.xxx.com"
-smtp_port = 587
-smtp_user = "xxx@xxx.com"
-smtp_password = "xxx"
+[smtp]
+# Specify your smtp server host.
+host = "smtp.xxx.com"
+# Specify your smtp server port.
+# Default is 587.
+port = 587
+# Specify your smtp server user.
+user = "xxx@xxx.com"
+# Specify your smtp server password.
+password = "xxx"
 ```
 
 _You should replace the information of yours._
@@ -47,12 +48,12 @@ _You should replace the information of yours._
 _Then, it's ok! Try to run by this command, and you will see some logs printed on screen:_
 
 ```bash
-$ docker run --name postar -p 5897:5897 -v /root/docker/postar/conf/postar.ini:/opt/postar/conf/postar.ini fishgoddess/postar:v0.2.3-alpha
+$ docker run --name postar -p 5897:5897 -v /root/docker/postar/postar.ini:/postar/postar.ini fishgoddess/postar:v0.3.0-alpha
 ```
 
-_Remember "/root/docker/postar/conf/postar.ini" is where your config file is._
+_Remember "/root/docker/postar/postar.ini" is where your config file is._
 
-_The work directory is "/opt/postar"._
+_The work directory in container is "/postar"._
 
 _If you want to enter the container, try this:_
 
@@ -60,7 +61,7 @@ _If you want to enter the container, try this:_
 $ docker exec -it postar sh
 ```
 
-_Notice that the based image we used is alpine, which doesn't have bash._
+_Notice that the based image we used is alpine, which doesn't have 'bash'._
 
 _So, you should use sh instead of bash._
 
@@ -75,16 +76,16 @@ version: "3.1"
 
 services:
   postar:
-    image: fishgoddess/postar:v0.2.3-alpha
+    image: fishgoddess/postar:v0.3.0-alpha
     restart: always
     ports:
       - "5897:5897"
     volumes:
-      - ./log:/opt/postar/log
-      - ./conf/postar.ini:/opt/postar/conf/postar.ini
+      - ./log:/postar/log
+      - ./postar.ini:/postar/postar.ini
 ```
 
-_Notice that we map directory "logs" in the container to local directory "logs"._
+_Notice that we map directory "log" in container to local directory "log"._
 
 _So, you can read these logs conveniently._
 
