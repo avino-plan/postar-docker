@@ -1,9 +1,7 @@
-# Copyright 2021 Ye Zi Jie.  All rights reserved.
+# Copyright 2021 FishGoddess.  All rights reserved.
 # Use of this source code is governed by a MIT style
 # license that can be found in the LICENSE file.
-#
-# Postar docker-compose
-# Author: FishGoddess
+
 version: "3.1"
 
 services:

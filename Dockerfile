@@ -1,9 +1,6 @@
-# Copyright 2021 Ye Zi Jie.  All rights reserved.
+# Copyright 2021 FishGoddess.  All rights reserved.
 # Use of this source code is governed by a MIT style
 # license that can be found in the LICENSE file.
-#
-# Postar dockerfile
-# Author: FishGoddess
 
 # Use alpine as a based image
 # Notice that its shell is sh not bash

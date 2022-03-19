@@ -1,10 +1,9 @@
-# Copyright 2021 Ye Zi Jie.  All rights reserved.
+# Copyright 2021 FishGoddess.  All rights reserved.
 # Use of this source code is governed by a MIT style
 # license that can be found in the LICENSE file.
-#
+
 # Postar docker publish script
-# Author: fishgoddess
-VERSION=v0.3.0-alpha
+VERSION=v0.3.1-alpha
 
 # Login to docker
 docker login
