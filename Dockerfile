@@ -1,9 +1,6 @@
-# Copyright 2021 Ye Zi Jie.  All rights reserved.
+# Copyright 2021 FishGoddess.  All rights reserved.
 # Use of this source code is governed by a MIT style
 # license that can be found in the LICENSE file.
-#
-# Postar dockerfile
-# Author: FishGoddess
 
 # Use alpine as a based image
 # Notice that its shell is sh not bash
@@ -11,7 +8,7 @@ FROM alpine:3.14.0
 LABEL maintainer="fishgoddess"
 
 # Prepare env
-ENV POSTAR_VERSION v0.3.0-alpha
+ENV POSTAR_VERSION v0.3.1-alpha
 ENV POSTAR_PACKAGE postar-$POSTAR_VERSION-linux-amd64.tar.gz
 ENV POSTAR_DOWNLOAD_URL https://github.com/avino-plan/postar/releases/download/$POSTAR_VERSION/$POSTAR_PACKAGE
 
