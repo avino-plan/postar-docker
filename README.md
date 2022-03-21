@@ -17,10 +17,10 @@ Github: https://github.com/avino-plan/postar-docker
 
 ### 📚 How to use
 
-#### 1. Pull an image, such as version v0.3.0-alpha.
+#### 1. Pull an image, such as version v0.3.1-alpha.
 
 ```bash
-$ docker pull fishgoddess/postar:v0.3.0-alpha
+$ docker pull fishgoddess/postar:v0.3.1-alpha
 ```
 
 #### 2. Run this image by two ways.
@@ -48,7 +48,7 @@ _You should replace the information of yours._
 _Then, it's ok! Try to run by this command, and you will see some logs printed on screen:_
 
 ```bash
-$ docker run --name postar -p 5897:5897 -v /root/docker/postar/postar.ini:/postar/postar.ini fishgoddess/postar:v0.3.0-alpha
+$ docker run --name postar -p 5897:5897 -v /root/docker/postar/postar.ini:/postar/postar.ini fishgoddess/postar:v0.3.1-alpha
 ```
 
 _Remember "/root/docker/postar/postar.ini" is where your config file is._
@@ -76,7 +76,7 @@ version: "3.1"
 
 services:
   postar:
-    image: fishgoddess/postar:v0.3.0-alpha
+    image: fishgoddess/postar:v0.3.1-alpha
     restart: always
     ports:
       - "5897:5897"
