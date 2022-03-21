@@ -8,7 +8,7 @@ FROM alpine:3.14.0
 LABEL maintainer="fishgoddess"
 
 # Prepare env
-ENV POSTAR_VERSION v0.3.0-alpha
+ENV POSTAR_VERSION v0.3.1-alpha
 ENV POSTAR_PACKAGE postar-$POSTAR_VERSION-linux-amd64.tar.gz
 ENV POSTAR_DOWNLOAD_URL https://github.com/avino-plan/postar/releases/download/$POSTAR_VERSION/$POSTAR_PACKAGE
 

@@ -6,10 +6,10 @@
 VERSION=v0.3.1-alpha
 
 # Login to docker
-docker login
+docker login || exit
 
 # Push to docker hub
-docker push fishgoddess/postar:$VERSION
+docker push fishgoddess/postar:$VERSION || exit
 
 # Logout from docker
-docker logout
+docker logout || exit
